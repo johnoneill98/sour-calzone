@@ -11,3 +11,10 @@ To have a better understanding of javascript and python
 This is is a record of what John O'Neill did each day
 ### June 10 2020 (Day 1)
 
+## Alex Benlolo's Challenge
+
+### Goal
+Complete some of the projects that I have abandoned.
+
+### Log
+* 06/10/2020 (Day 1) - 
