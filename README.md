@@ -9,7 +9,11 @@ To have a better understanding of javascript and python
 
 ## John O'Neill's Log
 This is is a record of what John O'Neill did each day
-### June 10 2020 (Day 1)
+### Log
+* 6/12/20(Day 1) - Did a refresher on how to run javaScript code through command line
+* 6/12/20(Day 2)- Made a website through localhost 8000 via the `python -m simpleHTTPServer` command
+* 6/12/20 (Day 3) able to use CSS to do some formatting and javaScript to get the current date. Was able to import an image into teh html file
+
 
 ## Alex Benlolo's Challenge
 
