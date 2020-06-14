@@ -1,22 +1,26 @@
 package window;
 
-import java.util.Random;
-
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import utilities.Tile;
-import javax.swing.JToolBar;
+import utilities.Field;
 
 public class MinesweeperClient extends JFrame {
 	private static final int FIELD_SIZE=40;
 	private static final int WINDOW_SIZE=818;
-	private static final int HOW_MANY_MINES=100;
+	private static final int TILE_SIZE=20;
+	private static final int HOW_MANY_MINES=150;
 	private static final long serialVersionUID = 1L;
-	private static final Random RAND = new Random();
 	private JPanel contentPane;
 
 	// Launch the application
@@ -36,9 +40,15 @@ public class MinesweeperClient extends JFrame {
 
 	// Create the frame
 	public MinesweeperClient() {
+		// The colors
+		Color[] classicColors = { new Color(200, 200, 200), new Color(255, 255, 255), new Color(75, 75, 75) };
+		Color[] darkColors = { new Color(50, 50, 50), new Color(105, 105, 105), new Color(255, 255, 255) };
+		Color[] desertColors = { new Color(200, 150, 0), new Color(130, 130, 0), new Color(0, 0, 0) };
+		Color[] grassColors = {new Color(0, 100, 0), new Color(55, 46, 14), new Color(255, 255, 255) };
+		
 		// Create the toolBar
-		JToolBar toolBar = new JToolBar();
-		toolBar.setBounds(0, 0, 822, 16);
+		JMenuBar toolBar = new JMenuBar();
+		toolBar.setBounds(0, 0, 822, 25);
 		
 		// Create the window itself
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,93 +62,66 @@ public class MinesweeperClient extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(toolBar);
 
-		// Create the tiles
-		Tile[][] tiles = new Tile[FIELD_SIZE][FIELD_SIZE];
-		for(int i=0;i<FIELD_SIZE;i++) {
-			for(int j=0;j<FIELD_SIZE;j++) {
-				tiles[i][j] = new Tile(false, false, 0);
-				tiles[i][j].setBounds(10+(i*20), 11+(j*20)+toolBar.getHeight(), 20, 20);
-				contentPane.add(tiles[i][j]);
-			}
-		}
-		// Deal with the mine placement
-		placeMines(tiles, FIELD_SIZE, HOW_MANY_MINES);
-		countMines(tiles, FIELD_SIZE);
-	}
-
-	// Place the mines in a Tile double array
-	public void placeMines(Tile[][] field, int size, int howMany) {
-		int row, col;
-		for(int i=0;i<howMany;i++) {
-			do {
-				row=RAND.nextInt(size);
-				col=RAND.nextInt(size);
-			}while(field[row][col].hasMine());
-			field[row][col].placeMine();
-		}
-	}
+		// Create the field
+		Field field = new Field(FIELD_SIZE, TILE_SIZE, HOW_MANY_MINES, toolBar.getHeight(), contentPane);
+		field.setUnrevealedColor(classicColors[0]);
+		field.setRevealedColor(classicColors[1]);
+		field.setTextColor(classicColors[2]);
 	
-	// Count the mines
-	public void countMines(Tile[][] field, int size) {
-		int counter=0;
-		boolean canGoNorth, canGoEast, canGoSouth, canGoWest;
-
-		// For each tile
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				// Initialize the data
-				canGoNorth=true;
-				canGoEast=true;
-				canGoSouth=true;
-				canGoWest=true;
-				counter=0;
-
-				// Determine any edge positioning
-				if (i == 0)
-					canGoNorth = false;
-				if (j == size - 1)
-					canGoEast = false;
-				if (i == size - 1)
-					canGoSouth = false;
-				if (j == 0)
-					canGoWest = false;
-
-
-				// Check north
-				if(canGoNorth && field[i-1][j].hasMine())
-					counter++;
-
-				// Check north-east
-				if(canGoNorth && canGoEast && field[i-1][j+1].hasMine())
-					counter++;
-				
-				// Check east
-				if(canGoEast && field[i][j+1].hasMine())
-					counter++;
-				
-				// Check south-east
-				if(canGoSouth && canGoEast && field[i+1][j+1].hasMine())
-					counter++;
-				
-				// Check south
-				if(canGoSouth && field[i+1][j].hasMine())
-					counter++;
-				
-				// Check south-west
-				if(canGoSouth && canGoWest && field[i+1][j-1].hasMine())
-					counter++;
-				
-				// Check west
-				if(canGoWest && field[i][j-1].hasMine())
-					counter++;
-				
-				// Check north-west
-				if(canGoNorth && canGoWest && field[i-1][j-1].hasMine())
-					counter++;
-				
-				// Assign the number of discovered adjacent mines to the tile
-				field[i][j].setValue(counter);
+		
+		// Create a menu for the colors
+		JMenu colors = new JMenu("Colors");
+		colors.setFont(new Font("Consolas", Font.BOLD, 15));
+		toolBar.add(colors, 0);
+		
+		// Default colors
+		JMenuItem classicColor = new JMenuItem("Classic");
+		classicColor.setFont(new Font("Consolas", Font.BOLD, 12));
+		classicColor.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				field.setUnrevealedColor(classicColors[0]);
+				field.setRevealedColor(classicColors[1]);
+				field.setTextColor(classicColors[2]);
 			}
-		}
+		});
+		colors.add(classicColor);
+		
+		// Dark mode colors
+		JMenuItem darkColor = new JMenuItem("Dark");
+		darkColor.setFont(new Font("Consolas", Font.BOLD, 12));
+		darkColor.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				field.setUnrevealedColor(darkColors[0]);
+				field.setRevealedColor(darkColors[1]);
+				field.setTextColor(darkColors[2]);
+			}
+		});
+		colors.add(darkColor);
+		
+		// Desert colors
+		JMenuItem desertColor = new JMenuItem("Desert");
+		desertColor.setFont(new Font("Consolas", Font.BOLD, 12));
+		desertColor.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				field.setUnrevealedColor(desertColors[0]);
+				field.setRevealedColor(desertColors[1]);
+				field.setTextColor(desertColors[2]);
+			}
+		});
+		colors.add(desertColor);
+		
+		// Grass colors
+		JMenuItem grassColor = new JMenuItem("Grass");
+		grassColor.setFont(new Font("Consolas", Font.BOLD, 12));
+		grassColor.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				field.setUnrevealedColor(grassColors[0]);
+				field.setRevealedColor(grassColors[1]);
+				field.setTextColor(grassColors[2]);
+			}
+		});
+		colors.add(grassColor);
+		
+		
 	}
 }
