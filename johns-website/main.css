@@ -1,0 +1,41 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  color: darkgreen;
+}
+
+h1 {
+  font-family: Arial;
+  color: darkmagenta;
+}
+
+ul {
+  font-family: 'helvetica';
+  color: black;
+
+}
+
+li {
+  list-style: circle;
+}
+
+.list {
+  list-style: square;
+}
+
+#date {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.crop {
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.crop img {
+  width: 400px;
+  height: 250px;
+  margin: -75px 0 0 --100px;
+}
