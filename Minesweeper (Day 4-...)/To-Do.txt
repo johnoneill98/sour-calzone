@@ -1,9 +1,0 @@
-Absolutely do these:
-====================
-Add a way to choose the size of the field and number of mines.
-Allow user to enter custom colors.
-
-Maybe do these:
-===============
-Add sound.
-Figure out the stack overflow problem.
