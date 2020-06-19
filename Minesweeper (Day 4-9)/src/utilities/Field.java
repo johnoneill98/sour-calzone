@@ -77,6 +77,9 @@ public class Field {
 		else
 			copyIconArray(icons);
 
+		// Randomize the icons
+		randomizeIcons();
+		
 		// For every tile on the field
 		for(int i=0;i<fieldSize;i++) {
 			for(int j=0;j<fieldSize;j++) {
@@ -85,11 +88,18 @@ public class Field {
 				tiles[i][j].setText(null);
 
 				// Set this tile's icons
-				tiles[i][j].setIcons(icons);
+				tiles[i][j].setIcons(this.icons);
 
 				// Refresh any previously cleared tile
 				if(tiles[i][j].isCleared())
 					tiles[i][j].revealTile();
+				else if(tiles[i][j].isFlagged()) {
+					if(icons != null)
+						tiles[i][j].setIcon(this.icons[8]);
+					else
+						tiles[i][j].setText("F");
+				}
+				
 			}
 		}
 	}
@@ -203,10 +213,10 @@ public class Field {
 	// {fieldSize, howManyMines, flaggedMines, falseFlags, percentCompleted}
 	public int[] getStats(boolean overridePercentageCompleted) {
 		int[] tmp = new int[5];
-		
+
 		tmp[0] = fieldSize*fieldSize;
 		tmp[1] = howManyMines;
-		
+
 		for(int i=0;i<fieldSize;i++) {
 			for(int j=0;j<fieldSize;j++) {
 				// Determine how to count the flags
@@ -216,29 +226,29 @@ public class Field {
 				}
 				else if(tiles[i][j].isFlagged())
 					tmp[3]++;
-				
+
 				// Determine the total tiles that were done
 				if(tiles[i][j].isCleared())
 					tmp[4]++;
-				
+
 			}
 		}
-		
+
 		// Correct the percentageCompleted
 		if(overridePercentageCompleted)
 			tmp[4]=100;
 		else
 			tmp[4]=(int)(((double)tmp[4]/tmp[0])*100);
-		
+
 		return tmp;
 	}
-	
+
 	/*
 	 * Helper Methods
 	 */
 
 	// Cascade through revealing tiles
- 	private void cascade(int i, int j) {
+	private void cascade(int i, int j) {
 		boolean canGoNorth = true, canGoEast = true, canGoSouth = true, canGoWest = true;
 		if (i == 0)
 			canGoNorth = false;
@@ -369,14 +379,14 @@ public class Field {
 				// If the tile is flagged but does not have a mine, make it red
 				else if(tiles[i][j].isFlagged() && !tiles[i][j].hasMine())
 					tiles[i][j].setBackground(tiles[i][j].getBackground().darker().darker());
-					
+
 				// If the tile is not flagged, reveal and correct color
 				else if(tiles[i][j].hasMine()) {
 					revealTile(i, j);
 					tiles[i][j].setBackground(unrevealedColor);
 					tiles[i][j].setCleared(false);
 				}
-				
+
 				// Reset the cleared state
 				if(tiles[i][j].hasMine())
 					tiles[i][j].setCleared(false);

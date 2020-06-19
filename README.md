@@ -26,3 +26,4 @@ Complete some of the projects that I have abandoned.
 * 06/16/2020 (Day 7) - Changed the text for tiles with a randomized image, making the game way harder. The text is still an option if the icons array is set to null, which is something I'm going to take advantage of once I figure out how to get user input for the size/difficulty of the game. I could just do it through args in main, but that isn't very user friendly.
 * 06/17/2020 (Day 8) - Fixed stack overflow. Added field customization.
 * 06/18/2020 (Day 9) - Improved field customization. Improved end game screens. Implemented custom colors. Fully finished with this project (this is also my second time updating this readMe. The first time has much more personality).
+* 06/19/2020 (Day 10) - Fixed bug with minesweeper that made the flags dissapeared when changing the icon color. Refamiliarized myself with the work I have done on my website so that I can hopefully finish it before day 100.

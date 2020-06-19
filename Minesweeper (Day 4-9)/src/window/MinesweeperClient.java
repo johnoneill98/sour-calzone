@@ -314,9 +314,10 @@ public class MinesweeperClient extends JFrame {
 		menuItem.setFont(font);
 		menuItem.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
-				System.out.println("Applying "+name+" icon colors.\n");
-				field.setIcons(getIcons(path));
+				System.out.println("Applying "+name+" icon colors.");
 				icons = getIcons(path);
+				field.setIcons(icons);
+				System.out.println();
 			}
 		});
 		return menuItem;
