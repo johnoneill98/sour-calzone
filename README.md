@@ -27,3 +27,6 @@ Complete some of the projects that I have abandoned.
 * 06/17/2020 (Day 8) - Fixed stack overflow. Added field customization.
 * 06/18/2020 (Day 9) - Improved field customization. Improved end game screens. Implemented custom colors. Fully finished with this project (this is also my second time updating this readMe. The first time has much more personality).
 * 06/19/2020 (Day 10) - Fixed bug with minesweeper that made the flags dissapeared when changing the icon color. Refamiliarized myself with the work I have done on my website so that I can hopefully finish it before day 100.
+* 06/20/2020 (Day 11) - Skipped
+* 06/21/2020 (Day 12) - Skipped
+* 06/22/2020 (Day 13) - Since I skipped the last couple of days, I decided to do three hours today instead of one. The plan is still to work on the website, so the first thing I did was reinstall Visual Studio. While that was going on, I looked into how to embed Java code onto a website. After an hour of no progress, I chose to come back to that another day. I did however, complete a slideshow of projects at the bottom of the home page. There are three pictures with captions. With that, I think the home page is finally complete! And yes, that took the entire remaining 2 hours. HTML, css, and Javascript are something I have not used in a hot minute.
