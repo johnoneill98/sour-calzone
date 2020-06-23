@@ -20,18 +20,30 @@ body {
     outline: solid black;
     margin: 10px;
     padding: 5px;
+    color: #ffffff;
 }
+
+    .lightContainer p {
+        text-align: left;
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+
+    .lightContainer projectTitle {
+        color: #bd3232;
+        text-decoration: underline;
+    }
 
 /*******************/
 /* Pictures Styles */
 /*******************/
-.mainPhoto {
-    padding-top: 15px;
-    padding-bottom: 5px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+    .mainPhoto {
+        padding-top: 15px;
+        padding-bottom: 5px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
 .logo {
     float: left;
@@ -194,6 +206,14 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 2px;
+    margin-top: 0px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.title-contact {
+    color: #bd3232;
+    margin-bottom: 0px;
     margin-top: 0px;
     text-decoration: underline;
     text-align: center;

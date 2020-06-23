@@ -30,3 +30,4 @@ Complete some of the projects that I have abandoned.
 * 06/20/2020 (Day 11) - Skipped
 * 06/21/2020 (Day 12) - Skipped
 * 06/22/2020 (Day 13) - Since I skipped the last couple of days, I decided to do three hours today instead of one. The plan is still to work on the website, so the first thing I did was reinstall Visual Studio. While that was going on, I looked into how to embed Java code onto a website. After an hour of no progress, I chose to come back to that another day. I did however, complete a slideshow of projects at the bottom of the home page. There are three pictures with captions. With that, I think the home page is finally complete! And yes, that took the entire remaining 2 hours. HTML, css, and Javascript are something I have not used in a hot minute.
+* 06/23/2020 (Day 14) - Finished the contact page and began work on the projects page.
