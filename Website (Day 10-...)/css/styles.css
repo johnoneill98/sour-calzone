@@ -37,13 +37,13 @@ body {
 /*******************/
 /* Pictures Styles */
 /*******************/
-    .mainPhoto {
-        padding-top: 15px;
-        padding-bottom: 5px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.mainPhoto {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .logo {
     float: left;
@@ -79,7 +79,6 @@ body {
     grid-column-gap: 3px;
     grid-row-gap: 20px;
     grid-template-columns: auto auto auto;
-
 }
 
 .grid-container > div {
