@@ -33,3 +33,13 @@ Complete some of the projects that I have abandoned.
 * 06/23/2020 (Day 14) - Finished the contact page and began work on the projects page.
 * 06/24/2020 (Day 15) - Continued work on the projects page. I have a pretty good skeleton of what I want, but I'm thinking I'll probably add more room for pictures at some point. I want only one project visible at a time, and pictures seem like a good way to fill space. Maybe I'll do a slideshow? I don't know yet!
 * 06/25/2020 (Day 16) - Changed the projects page to be one big slideshow, with mini slideshows on each slide. I completed the first slide and second slides, BigInteger.lua and Minesweeper respectively.
+* 06/26/2020 (Day 17) - Password Manager
+* 06/27/2020 (Day 18) - Password Manager
+* 06/28/2020 (Day 19) - Password Manager
+* 06/29/2020 (Day 20) - Password Manager
+* 06/30/2020 (Day 21) - Password Manager
+* 06/31/2020 (Day 22) - Password Manager
+* 06/01/2020 (Day 23) - Password Manager
+* 06/02/2020 (Day 24) - Password Manager
+* 06/03/2020 (Day 25) - Password Manager
+* 06/04/2020 (Day 26) - Uh... I made password manager so that I have something to demonstrate on my website that I understand encryption algorithims. It sort of counts as completing an abandonded project, because I made one a couple of years ago that was functional but used a substitution cipher instead of actual encryption. Now I can say that I've done it correctly, even if there are some more subtle security flaws I overlooked. Anyway, back to the website!
