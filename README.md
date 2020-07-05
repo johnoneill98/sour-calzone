@@ -39,7 +39,8 @@ Complete some of the projects that I have abandoned.
 * 06/29/2020 (Day 20) - Password Manager
 * 06/30/2020 (Day 21) - Password Manager
 * 06/31/2020 (Day 22) - Password Manager
-* 06/01/2020 (Day 23) - Password Manager
-* 06/02/2020 (Day 24) - Password Manager
-* 06/03/2020 (Day 25) - Password Manager
-* 06/04/2020 (Day 26) - Uh... I made password manager so that I have something to demonstrate on my website that I understand encryption algorithims. It sort of counts as completing an abandonded project, because I made one a couple of years ago that was functional but used a substitution cipher instead of actual encryption. Now I can say that I've done it correctly, even if there are some more subtle security flaws I overlooked. Anyway, back to the website!
+* 07/01/2020 (Day 23) - Password Manager
+* 07/02/2020 (Day 24) - Password Manager
+* 07/03/2020 (Day 25) - Password Manager
+* 07/04/2020 (Day 26) - Uh... I made password manager so that I have something to demonstrate on my website that I understand encryption algorithims. It sort of counts as completing an abandonded project, because I made one a couple of years ago that was functional but used a substitution cipher instead of actual encryption. Now I can say that I've done it correctly, even if there are some more subtle security flaws I overlooked. Anyway, back to the website!
+* 07/05/2020 (Day 27) - Added the password manager project to my website, and made the website live at www.alex-benlolo.tech

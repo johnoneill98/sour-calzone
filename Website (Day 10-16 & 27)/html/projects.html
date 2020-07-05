@@ -237,12 +237,12 @@
                     </div>
                 </div>
 
-                <!-- Single DES Slide -->
+                <!-- Password Manager Slide -->
                 <div class="mySlides4 fade">
-                    <!-- Single DES -->
+                    <!-- Password Manager -->
                     <div class="projectContainer" align="center">
                         <!-- The name -->
-                        <div class="titleText">The Data Encryption Standard: DES (Java)</div>
+                        <div class="titleText">Password Manager (Java)</div>
 
                         <!-- The Grid-->
                         <div class="grid-container">
@@ -250,7 +250,19 @@
                             <div class="grid-story">
                                 <div class="subTitleText">The Story</div>
                                 <div class="storyText">
-                                    [Place holder for story]
+                                    After the conclusion of my first year at Towson University, I took on the rather ambitious
+                                    task of creating a password manager. At the time, I had a basic understand of Java and figured
+                                    that whatever I made would be good enough. However, looking back, I made many severe mistakes:
+                                    I stored the master password as plaintext in the code, used a substitution cipher instead
+                                    of a modern encryption algorithim, and made no effort to make the program user friendly.
+                                    So, two years later, I revisited the idea of a password manager, aiming to correct my previous
+                                    shortcomings. The one you are seeing on this website uses the Advanced Encryption
+                                    Algorithim (<a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a>), which is currently the most secure symmetric encryption algorithim. Additionally, the
+                                    master password acts as a key to unencrypt a file that contains the passwords. This means
+                                    that the master password is not stored in the code, because the user can set it to be whatever
+                                    they want. Lastly, managing the passwords is easily done with the four built in functions:
+                                    search, add, remove, and modify. While working on this project for a second time, it was easy to
+                                    notice the growth in my understanding of coding, which made for a satisfying time.
                                 </div>
                             </div>
 
@@ -260,20 +272,28 @@
                                 <div class="slideshow-container">
                                     <!-- Some example -->
                                     <div class="mySlides3 fade">
-                                        <img src="../img/self.png" style="width:650px; height: 650px">
-                                        <div class="text">THIS IS A PLACE HOLDER.</div>
+                                        <img src="../img/passLolo/mainScreen.png" style="width:650px; height: 650px">
+                                        <div class="text">
+                                            The main screen of the password manager.
+                                            Left clicking a row reveals the password and populates the remove and modify fields.
+                                            Right clicking a row copies the password to the user's clipboard.
+                                        </div>
                                     </div>
 
                                     <!-- Some other example -->
                                     <div class="mySlides3 fade">
-                                        <img src="../img/logo.png" style="width:650px; height: 650px">
-                                        <div class="text">THIS IS A PLACE HOLDER</div>
+                                        <img src="../img/passLolo/updateScreens.png" style="width:650px; height: 650px">
+                                        <div class="text">
+                                            An example of how to manipulate the table of credentials.
+                                            There is a function for the user to remove many entries at once or to modify a single entry,
+                                            as well as a confirmation that notifies the user how many entries are going to be affected.
+                                        </div>
                                     </div>
 
                                     <!-- The last example -->
                                     <div class="mySlides3 fade">
-                                        <img src="../img/titleLine.png" style="width:650px; height: 650px">
-                                        <div class="text">THIS IS A PLACE HOLDER</div>
+                                        <img src="../img/passLolo/vaultFile.png" style="width:650px; height: 650px">
+                                        <div class="text">The previously seen table translated into an encrypted file.</div>
                                     </div>
 
                                     <!-- Next and previous buttons -->
@@ -295,10 +315,11 @@
                                 <div class="subTitleText">Features</div>
                                 <div class="accomplishText">
                                     <ul>
-                                        <li>Place</li>
-                                        <li>Holder</li>
-                                        <li>For</li>
-                                        <li>Features</li>
+                                        <li>Powerful encrpytion: <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a> in <a href="https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC)" target="_blank">CBC</a> mode using <a href="https://en.wikipedia.org/wiki/PKCS" target="_blank">PKCS5</a> padding.</li>
+                                        <li>Easily make changes to your passwords using the on screen functions.</li>
+                                        <li>Quickly copy any password by right clicking on its row.</li>
+                                        <li>Save multiple encrypted files locked with different master passwords, allowing for use by more than one person.</li>
+                                        <li>Generate secure passwords with a click of a button.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -308,10 +329,9 @@
                                 <div class="subTitleText">Accomplishments</div>
                                 <div class="accomplishText">
                                     <ul>
-                                        <li>Place</li>
-                                        <li>Holder</li>
-                                        <li>For</li>
-                                        <li>Accomplishments</li>
+                                        <li>Successfully encrypted and decrypted a file using modern algorithims.</li>
+                                        <li>Validated user input to prevent malicious attacks while entering the master password.</li>
+                                        <li>Implemented a simple and easy to understand user interface.</li>
                                     </ul>
                                 </div>
                             </div>
